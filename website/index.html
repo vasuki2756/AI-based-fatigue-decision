@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fatigue Monitoring Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h2>🏭 Operator Fatigue Monitoring System</h2>
+        <div id="clock">Status: LIVE | Station 04</div>
+    </div>
+    <div class="container">
+        <div class="video-feed">
+            [ Live Camera Feed Placeholder ]
+            <div class="facial-landmarks"></div>
+            <div id="live-alert" class="overlay-alert" style="display: none;">⚠️ FATIGUE DETECTED</div>
+        </div>
+        <div class="status-panel">
+            <h3>Operator Status</h3>
+            <div id="current-status" class="alert alert-safe">✅ OPERATOR ALERT & ACTIVE</div>
+            
+            <div class="metrics">
+                <div class="metric-box">
+                    <strong>Eye Aspect Ratio (EAR)</strong><br>
+                    <span id="ear-val" class="metric-value">0.32</span>
+                    <div class="threshold">Threshold: < 0.22 for 1.0s</div>
+                </div>
+                <div class="metric-box">
+                    <strong>Mouth Aspect Ratio (MAR)</strong><br>
+                    <span id="mar-val" class="metric-value">0.35</span>
+                    <div class="threshold">Threshold: > 0.60 for 1.5s</div>
+                </div>
+                <div class="metric-box">
+                    <strong>Head Pitch (Degrees)</strong><br>
+                    <span id="pitch-val" class="metric-value">2.1°</span>
+                    <div class="threshold">Threshold: > 15.0°</div>
+                </div>
+            </div>
+
+            <h3>Alert Log</h3>
+            <ul id="alert-log" class="log-list">
+                <li class="log-item safe-log">System initialized... No recent alerts.</li>
+            </ul>
+            
+            <button id="sim-fatigue-btn" class="action-btn">Simulate Fatigue Event</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
